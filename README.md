@@ -58,7 +58,7 @@ pip install -r requirements.txt
 Crie um arquivo *.env* com o seguinte formato:
 ```
 YOUTUBE_API_KEY=sua_chave
-GOOGLE_API_KEY=
+GOOGLE_API_KEY=sua_chave
 ```
 
 ### 4. Execute eo servidor
