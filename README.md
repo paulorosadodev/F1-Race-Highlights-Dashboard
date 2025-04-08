@@ -61,7 +61,7 @@ YOUTUBE_API_KEY=sua_chave
 GOOGLE_API_KEY=sua_chave
 ```
 
-### 4. Execute eo servidor
+### 4. Execute o servidor
 ```
 python manage.py runserver
 ```
@@ -76,7 +76,7 @@ cd youtube-dashboard
 npm install
 ```
 
-### 2. Execute eo servidor
+### 2. Execute o servidor
 ```
 npm run dev
 ```
