@@ -9,7 +9,7 @@ import { SummaryCards } from "../../components/SummaryCards";
 
 import { fetchVideoDetails } from "../../api/endpoints/video-comments";
 
-import { CommentsWrapper, DataWrapper, SummaryWrapper, TextWrapper, VideoDetailsWrapper } from "./styles";
+import { CommentsWrapper, DataWrapper, SummaryTopicCard, SummaryWrapper, TextWrapper, VideoDetailsWrapper } from "./styles";
 
 type CommentsResponse = string[];
 type SummaryResponse = string;
@@ -22,7 +22,6 @@ export default function VideoDetails() {
     const [summary, setSummary] = useState<SummaryResponse>("");
     const [summaryLoading, setSummaryLoading] = useState(true);
     const [commentsLoading, setCommentsLoading] = useState(true);
-
 
     useEffect(() => {
         if (dashboard?.videos) {
@@ -76,11 +75,20 @@ export default function VideoDetails() {
                         </a>
                     </DataWrapper>
                     <SummaryWrapper>
-                        <h2>O que estão comentando?</h2>
+                        <h2>Tópicos discutidos</h2>
                         {summaryLoading ? (
                             <Loading />
                         ) : summary.length > 0 ? (
-                            <p>{summary}</p> 
+                            <div>
+                                {
+                                    summary.split("/").map((topic, index) => (
+                                        <SummaryTopicCard key={index}>
+                                            {topic.trim()}
+                                        </SummaryTopicCard>
+                                    ))
+                                }
+                            </div>
+                            
                         ) : (
                             <p>Sem resumo disponível</p>
                         )}

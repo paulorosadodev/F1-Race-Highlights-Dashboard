@@ -94,27 +94,19 @@ export const SummaryWrapper = styled.div`
         margin-bottom: 1rem;
     }
 
-    p {
-        line-height: 1.4rem;
-        overflow-y: auto;
-        max-height: 10rem;
-        padding-right: 1rem;
-
-        &::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        &::-webkit-scrollbar-track {
-            background: ${({ theme }) => theme["gray-800"]};
-            border-radius: 4px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background-color: ${({ theme }) => theme["red-700"]};
-            border-radius: 4px;
-            border: 2px solid ${({ theme }) => theme["gray-800"]};
-        }
+    & > div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
+
+`;
+
+export const SummaryTopicCard = styled.div`
+    background-color: ${props => props.theme["red-700"]};
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
 `;
 
 export const CommentsWrapper = styled.div`
